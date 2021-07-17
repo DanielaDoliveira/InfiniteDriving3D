@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
      float speed = 15f; 
      float turnSpeed = 8.0f;
      float forwardInput,horizontalInput;
-    
+  
     
     void Start()
     {
@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
       MovePlayer();
+     
         
     }
 
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("GameOver"))
         {
+            
             SceneManager.LoadScene("GameOver");
         }
     }
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
         // transform.Translate(Vector3.forward*Time.deltaTime*speed*forwardInput);
         transform.Translate(Vector3.left*Time.deltaTime*speed*horizontalInput);
         transform.Rotate(Vector3.up ,turnSpeed*horizontalInput*Time.deltaTime);
-
+        
     }
+    
 }

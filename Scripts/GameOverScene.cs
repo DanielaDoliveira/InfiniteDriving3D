@@ -5,22 +5,22 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameOverScene : MonoBehaviour
 {
-    public Text coinPoints,recordPoints,recordmessage,obstaclePoints;
+    public Text coinPoints,recordPoints,recordmessage;
     public int coinNumber, recordNumber;
+    public AudioSource carAudioSource;
+    public AudioClip carBroke;
     void Start()
     {
+        carAudioSource.PlayOneShot(carBroke);
+        CheckRecord();
         coinPoints.text = PlayerPrefs.GetInt("COINPOINTS").ToString();
         recordPoints.text = PlayerPrefs.GetInt("RECORDPOINTS").ToString();
-        obstaclePoints.text = PlayerPrefs.GetInt("OBSTACLES").ToString();
+        
 
     }
 
    
-    void Update()
-    {
-        CheckRecord();
-       
-    }
+  
 
     void CheckRecord()
     {
@@ -29,6 +29,7 @@ public class GameOverScene : MonoBehaviour
             recordmessage.text = "You're a new record!";
             coinNumber = PlayerPrefs.GetInt("COINPOINTS");
             PlayerPrefs.SetInt("RECORDPOINTS", coinNumber);
+            recordPoints.text = PlayerPrefs.GetInt("RECORDPOINTS").ToString();
         }
         else
         {
