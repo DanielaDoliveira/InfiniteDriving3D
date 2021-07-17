@@ -6,18 +6,22 @@ public class GenerateObstacles : MonoBehaviour
 {
     public GameObject boxPrefab,conePrefab;
     public Transform[] spawns;
+    public Transform[] coinSpawns;
     private GameObject newPrefab,newPrefab2;
-    
+    public int timeToCoinSpawn;
+   
+   
    
     void Start()
     {
-      
+     
     }
 
     // Update is called once per frame
     void Update()
     {
         GenerateBox();
+      
       
     }
 
@@ -31,19 +35,26 @@ public class GenerateObstacles : MonoBehaviour
             
         }
         Invoke("GenerateBox2",3.0f);
-        
+        timeToCoinSpawn = Random.Range(0, 1);
+       
+
     }
 
     void GenerateBox2()
     {
         if (newPrefab2 == null)
         {
-            int rand = Random.Range(0,2);
+            int rand = Random.Range(0, 2);
 
             newPrefab2 = Instantiate(conePrefab, spawns[rand]) as GameObject;
-            
+           
+      
         }
     }
 
+
+    
+
+   
  
 }

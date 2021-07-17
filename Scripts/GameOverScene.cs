@@ -5,13 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameOverScene : MonoBehaviour
 {
-    public Text coinPoints,recordPoints,recordmessage;
+    public Text coinPoints,recordPoints,recordmessage,obstaclePoints;
     public int coinNumber, recordNumber;
     void Start()
     {
         coinPoints.text = PlayerPrefs.GetInt("COINPOINTS").ToString();
         recordPoints.text = PlayerPrefs.GetInt("RECORDPOINTS").ToString();
-        
+        obstaclePoints.text = PlayerPrefs.GetInt("OBSTACLES").ToString();
+
     }
 
    
@@ -35,6 +36,7 @@ public class GameOverScene : MonoBehaviour
             recordmessage.text = "Maximum points: ";
         }
     }
+    
 
    
 }

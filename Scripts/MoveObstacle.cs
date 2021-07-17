@@ -7,12 +7,12 @@ public class MoveObstacle : MonoBehaviour
 {
     // Start is called before the first frame update
      float speed;
-     public CounterObstacle _counterObstacle;
+
 
     void Start()
     {
         speed = 65f;
-        _counterObstacle = GameObject.FindWithTag("GameController").GetComponent<CounterObstacle>();
+       
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class MoveObstacle : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        _counterObstacle.addObsCounter();
+     
         Destroy(gameObject);
        
         
