@@ -33,6 +33,15 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
     }
+       private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("GameOver"))
+            {
+                
+                SceneManager.LoadScene("GameOver");
+            }
+        }
+
 
     void MovePlayer()
     {
