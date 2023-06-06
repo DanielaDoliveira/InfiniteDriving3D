@@ -12,3 +12,6 @@ Infinite Driving 3D is an infinite running game style
 
 [![SEE GAMEPLAY ON YOUTUBE](https://img.youtube.com/vi/-_oK1T-kB3o/0.jpg)](https://www.youtube.com/watch?v=-_oK1T-kB3o)
  ###### Click on picture above to SEE the GAMEPLAY! 
+
+## Update:
+Infinite Driving now have your own website! https://infinitedrivingthegame.netlify.app
